@@ -1,0 +1,42 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      theme: ThemeData(
+        scaffoldBackgroundColor: Colors.yellow.shade100,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.blue,
+          foregroundColor: Colors.white,
+        ),
+        textTheme: const TextTheme(
+          headlineSmall: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+        ),
+      ),
+      home: const MyPage(),
+    ),
+  );
+}
+
+class MyPage extends StatelessWidget {
+  const MyPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Themes and Styles')),
+      body: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text('Welcome', style: Theme.of(context).textTheme.headlineSmall),
+            const Text(
+              'Flutter Lab',
+              style: TextStyle(color: Colors.red, fontSize: 20),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
